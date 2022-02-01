@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { createUser } from '../../api';
 
-const Form = () => {
+const Create = () => {
     const [userData, setUserData] = useState({ first_name: '', last_name: '', username: '', date_of_birth: '' });
 
     const createNewUser = async () => {
@@ -71,4 +71,4 @@ const Form = () => {
     );
 }
 
-export default Form;
+export default Create;

@@ -1,10 +1,10 @@
-import Form from "./components/Form/Form";
+import Create from "./components/Create/Create";
 import Users from "./components/Users/Users";
 
 function App() {
   return (
     <div className="mt-28 mx-40">
-      <Form />
+      <Create />
       <Users />
     </div>
   );
