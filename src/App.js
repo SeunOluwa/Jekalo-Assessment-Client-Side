@@ -1,8 +1,10 @@
+import Form from "./components/Form/Form";
+
 function App() {
   return (
-    <h2 className="text-3xl text-red-500 font-bold underline">
-      Jekalo Assessment
-    </h2>
+    <div className="mt-28 mx-40">
+      <Form />
+    </div>
   );
 }
 
