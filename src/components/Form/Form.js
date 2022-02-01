@@ -56,7 +56,7 @@ const Form = () => {
                 />
                 <label className="block mb-1 text-purple-800 font-bold">Date of Birth</label>
                 <input 
-                    type="date" 
+                    placeholder="DD-MM-YYYY"
                     required
                     className="block outline-none py-3 pl-3 mr-4 border rounded border-purple-300"
                     value={userData.date_of_birth}
