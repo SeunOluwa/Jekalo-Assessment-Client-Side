@@ -1,32 +1,38 @@
 import { useEffect, useState } from 'react';
 
-import { getUsers } from '../../api';
+import { getUsers, deleteUser } from '../../api';
 
 const Users = () => {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
 
-    useEffect(() => {
-        const getAllUsers = async () => {
-            setLoading(true);
-            try {
-                const res = await getUsers();
+    const getAllUsers = async () => {
+        setLoading(true);
+        try {
+            const res = await getUsers();
 
-                const data = await res;
-                console.log(data.data);
+            const data = await res;
+            console.log(data.data);
 
-                setUsers(data.data);
-                setLoading(false);
-            } catch (error) {
-                console.log(error);
-                setLoading(false);
-                setError("Some error occured");
-            }
-        };
+            setUsers(data.data);
+            setLoading(false);
+        } catch (error) {
+            console.log(error);
+            setLoading(false);
+            setError("Some error occured");
+        }
+    };
 
+    useEffect(() => {        
         getAllUsers();
     }, []);
+
+    const handleDeleteUser = async (username) => {
+        await deleteUser(username);
+
+        getAllUsers();
+    };
 
     return (
         <div>
@@ -43,7 +49,7 @@ const Users = () => {
                             <span>{user.username}</span>
                             <span>{user.first_name} {user.last_name}</span>
                             <span>{user.date_of_birth}</span>
-                            <button onClick={}>Delete</button>
+                            <button onClick={() => handleDeleteUser(user.username)}>Delete</button>
                         </div>
                     ))}
                 </div>

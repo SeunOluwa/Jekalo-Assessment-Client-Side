@@ -11,18 +11,18 @@ const Form = () => {
         } catch (error) {
             console.log(error);
         }
-    }
+    };
 
     const clear = () => {
         setUserData({ first_name: '', last_name: '', username: '', date_of_birth: '' });
-    }
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         createNewUser();
         clear();
-    }
+    };
 
     return (
         <div className="flex">
