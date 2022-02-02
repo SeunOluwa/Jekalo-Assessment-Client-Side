@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:5000' });
+const API = axios.create({ baseURL: 'https://jekaloassessment.herokuapp.com/' });
 
 export const createUser = (newUser) => API.post('/api/user', newUser);
 export const getUsers = () => API.get('/api/users');
