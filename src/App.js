@@ -3,7 +3,7 @@ import Users from "./components/Users/Users";
 
 function App() {
   return (
-    <div className="mt-28 mx-40">
+    <div className="mt-28 mx-72">
       <Create />
       <Users />
     </div>
