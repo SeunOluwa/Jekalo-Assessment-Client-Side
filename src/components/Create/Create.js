@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { createUser } from '../../api';
 
-const Create = () => {
+const Create = ({ getAllUsers }) => {
     const [userData, setUserData] = useState({ first_name: '', last_name: '', username: '', date_of_birth: '' });
+    const history = useHistory();
 
     const createNewUser = async () => {
         try {
@@ -15,12 +17,14 @@ const Create = () => {
 
     const clear = () => {
         setUserData({ first_name: '', last_name: '', username: '', date_of_birth: '' });
+        getAllUsers();
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         createNewUser();
+        history.push("/");
         clear();
     };
 
@@ -64,7 +68,7 @@ const Create = () => {
                     <div className="col-span-1 col-start-2 col-end-2 row-span-1 row-start-2 row-end-2">
                         <label className="block mb-1 text-purple-800 font-medium">Date of Birth</label>
                         <input 
-                            placeholder="DD-MM-YYYY"
+                            type="date"
                             required
                             className="block outline-none w-full py-3 pl-3 border rounded-md border-purple-300"
                             value={userData.date_of_birth}

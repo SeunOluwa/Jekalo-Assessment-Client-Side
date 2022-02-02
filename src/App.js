@@ -1,12 +1,14 @@
-import Create from "./components/Create/Create";
-import Users from "./components/Users/Users";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from './components/Home/Home';
 
-function App() {
+const App = () => {
   return (
-    <div className="mt-28 mx-72">
-      <Create />
-      <Users />
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Home} />
+      </Switch>
+    </Router>
   );
 }
 

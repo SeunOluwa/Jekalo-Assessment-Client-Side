@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import Create from '../Create/Create';
+
 import { getUsers, deleteUser } from '../../api';
 
 const Users = () => {
@@ -13,7 +15,6 @@ const Users = () => {
             const res = await getUsers();
 
             const data = await res;
-            console.log(data.data);
 
             setUsers(data.data);
             setLoading(false);
@@ -36,6 +37,7 @@ const Users = () => {
 
     return (
         <div>
+            <Create getAllUsers={getAllUsers} />
             <h2 className="bg-purple-100 mt-12 py-2 pl-4 rounded-md font-medium">
                 Users
             </h2>
