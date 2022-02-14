@@ -51,31 +51,31 @@ const Users = () => {
                 <div>
                     {users.map((user) => (
                         <div 
-                            className="mt-8 pb-2 border-b border-purple-100 flex justify-between items-center" 
+                            className="mt-4 ml-3 lg:mt-8 pb-2 border-b border-purple-100 lg:flex lg:justify-between lg:items-center" 
                             key={user._id}
                         >
-                            <div className="ml-5">
+                            <div className="flex lg:ml-5">
                                 <p className="border p-1 border-purple-800 bg-purple-800 text-white 
                                 font-medium rounded-full">
                                     {user.name_prefix}
                                 </p>
                             </div>
-                            <div>
+                            <div className="mt-1">
                                 <p className="font-medium">
                                     {user.username}
                                 </p>
                             </div>
-                            <div className="ml-10">
+                            <div className="mt-1 lg:ml-10">
                                 <p className="font-medium">
                                     {user.first_name} {user.last_name}
                                 </p>
                             </div>
-                            <div className="ml-72">
+                            <div className="mt-1 lg:ml-72">
                                 <p className="font-medium">
                                     {user.date_of_birth}
                                 </p>
                             </div>
-                            <div className="mr-3">
+                            <div className="mt-1 flex justify-center lg:mr-3">
                                 <img 
                                     src={trashSvg} 
                                     alt="trash-icon" 
